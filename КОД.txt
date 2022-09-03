@@ -1,0 +1,273 @@
+https://codesandbox.io/s/practical-hertz-xx6e74?file=/src/App.js
+
+
+https://habr.com/ru/post/129648/ ----
+
+--------------
+------КОД ВЕСЬ
+--------------
+
+https://vkcom.github.io/VKUI/#/SubnavigationBar ----
+
+
+https://dev.vk.com/api/posts ----
+
+https://dev.vk.com/method/wall.postAdsStealth#Пример%20запроса ----
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ПАНЕЛЬ
+
+https://vkcom.github.io/VKUI/3.13.2/#root
+
+Базовый компонент для создания панелей. В качестве children принимает коллекцию Panel. У каждой Panel должен быть уникальный id. Свойство activePanel определяет какая Panel активна.
+
+При смене значения свойства activePanel происходит плавный переход от одной панели к другой. Как только он заканчивается, вызывается свойство-функция onTransition.
+
+
+
+
+import React from 'react';
+import { View, Panel, ConfigProvider } from '@vkontakte/vkui';
+import vkBridge from '@vkontakte/vk-bridge';
+
+class App extends React.Component {
+
+  state = {
+    activePanel: 'main',
+    history: ['main']
+  }
+
+  goBack = () => {
+    const history = [...this.state.history];
+    history.pop();
+    const activePanel = history[history.length - 1];
+    if (activePanel === 'main') {
+      vkBridge.send('VKWebAppDisableSwipeBack');
+    }
+    this.setState({ history, activePanel });
+  }
+
+  goForward = (activePanel) => {
+    const history = [...this.state.history];
+    history.push(activePanel);
+    if (this.state.activePanel === 'main') {
+      vkBridge.send('VKWebAppEnableSwipeBack');
+    }
+    this.setState({ history, activePanel });
+  }
+
+  render () {
+    return (
+      <ConfigProvider isWebView={true}>
+        <View
+          onSwipeBack={this.goBack}
+          history={this.state.history}
+          activePanel={this.state.activePanel}
+        >
+          <Panel id="main"/>
+          <Panel id="profile"/>
+          <Panel id="education"/>
+        </View>
+      </ConfigProvider>
+    )
+  }
+}
+
+
+
+
+
+////// ВАР 2
+
+class Example extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      activeView: 'view1'
+    }
+  }
+
+  render() {
+    return (
+      <Root activeView={this.state.activeView}>
+        <View activePanel="panel1.1" id="view1">
+          <Panel id="panel1.1">
+            <PanelHeader>View 1</PanelHeader>
+            <Group>
+              <CellButton onClick={ () => this.setState({ activeView: 'view2' }) }>
+                Open View 2
+              </CellButton>
+            </Group>
+          </Panel>
+        </View>
+        <View header activePanel="panel2.1" id="view2">
+          <Panel id="panel2.1">
+            <PanelHeader>View 2</PanelHeader>
+            <Group>
+              <CellButton onClick={ () => this.setState({ activeView: 'view1' }) }>
+                Back to View 1
+              </CellButton>
+            </Group>
+          </Panel>
+        </View>
+      </Root>
+    )
+  }
+}
+
+<Example />
+
+
+
+
+--------------------------------------------
+
+------------------------------ВАРИАНТ КОДА 1
+
+--------------------------------------------
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { View, Headline, FormLayout, Radio, Panel, ConfigProvider, PanelHeader, Header, Group, Cell } from '@vkontakte/vkui';
+import vkBridge from '@vkontakte/vk-bridge';
+
+
+
+
+
+
+
+
+
+
+class Example extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      activeView: 'view1'
+    }
+  }
+
+  render() {
+    return (
+      <Root activeView={this.state.activeView}>
+        <View activePanel="panel1.1" id="view1">
+          <Panel id="panel1.1">
+            <PanelHeader>View 1</PanelHeader>
+            <Group>
+              <CellButton onClick={ () => this.setState({ activeView: 'view2' }) }>
+                Open View 2
+              </CellButton>
+            </Group>
+          </Panel>
+        </View>
+        <View header activePanel="panel2.1" id="view2">
+          <Panel id="panel2.1">
+            <PanelHeader>View 2</PanelHeader>
+            <Group>
+              <CellButton onClick={ () => this.setState({ activeView: 'view1' }) }>
+                Back to View 1
+              </CellButton>
+            </Group>
+          </Panel>
+        </View>
+      </Root>
+    )
+  }
+}
+
+<Example />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

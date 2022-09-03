@@ -1,0 +1,105 @@
+
+<Checkbox onChange={() => setDisabled((prev) => !prev)}>
+disabled
+</Checkbox>
+
+
+
+
+
+
+
+
+
+
+https://docs.nativebase.io/3.1.x/select ---
+
+
+https://dev.vk.com/method/wall.post
+
+https://www.cluemediator.com/how-to-get-selected-by-only-value-in-react-select ---
+
+
+
+https://material-ui-gray.vercel.app/ru/components/selects/
+
+
+
+https://react-md.dev/packages/form/select-field-demos ---
+
+
+https://react-select.com/home
+
+option
+color: '#2660A4',
+
+<em>Placeholder</em>
+
+<optgroup label="Category 2">
+            <option value={3}>Option 3</option>
+            <option value={4}>Option 4</option>
+          </optgroup>
+
+https://mui.com/material-ui/react-select/ ---
+
+
+
+
+
+https://docs.nativebase.io/radio ---
+
+
+https://vkcom.github.io/icons/#28/message_heart ---
+
+
+
+
+
+
+
+<View>
+            <Picker SelectedValue = {this.state.user} onValueChange = {this.UpdateUser}>
+            <Picker.Item label = "Steve" value = "стив" />
+            <Picker.Item label = "Эллен" value = "эллен" />
+            <Picker.Item label = "Maria" value = "maria" />
+         </Picker>
+         <Стиль текста = {styles.text}>{this.state.user}</Text>
+            </View>
+
+
+
+
+///////////----////////////-----------//////////////
+
+https://blog.logrocket.com/creating-custom-react-native-dropdown/
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+
+const App: FC = () => {
+  const [selected, setSelected] = useState(undefined);
+  const data = [
+    { label: 'One', value: '1' },
+    { label: 'Two', value: '2' },
+    { label: 'Three', value: '3' },
+    { label: 'Four', value: '4' },
+    { label: 'Five', value: '5' },
+  ];
+
+  return (
+    <View style={styles.container}>
+      {!!selected && (
+        <Text>
+          Selected: label = {selected.label} and value = {selected.value}
+        </Text>
+      )}
+      <Dropdown label="Select Item" data={data} onSelect={setSelected} />
+      <Text>This is the rest of the form.</Text>
+    </View>
+  );
+};
+
+
+
+
+
+

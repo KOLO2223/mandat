@@ -1,0 +1,120 @@
+https://material-ui-gray.vercel.app/ru/components/selects/
+
+https://react-md.dev/packages/form/select-field-demos#simple-native-select-title
+
+
+
+
+
+
+
+
+
+
+
+export default function Demo(): ReactElement {
+const [value, setValue] = useState("");
+
+
+
+
+
+
+
+
+
+
+1. 
+<Select
+    labelId="demo-simple-select-label"
+    id="demo-simple-select"
+    value={age}
+    label="Age"
+
+    onChange={handleChange}
+
+  >
+    <MenuItem value={10}>Ten</MenuItem>
+    <MenuItem value={20}>Twenty</MenuItem>
+    <MenuItem value={30}>Thirty</MenuItem>
+  </Select>
+
+2. 
+
+ÓÑÒÀÍÀÂËÈÂÀÅÌ ÏÎ ÓÌÎË×ÀÍÈÞ
+
+export default function SelectVariants() {
+  const [age, setAge] = React.useState('');
+
+
+ÊÎÄ ÏÅÐÅÊËÞ×ÅÍÈß
+  const handleChange = (event) => {
+    setAge(event.target.value);
+  };
+
+
+
+<div>
+      <FormControl sx={{ m: 1, minWidth: 80 }}>
+        <InputLabel id="demo-simple-select-autowidth-label">Age</InputLabel>
+        <Select
+          labelId="demo-simple-select-autowidth-label"
+          id="demo-simple-select-autowidth"
+          value={age}
+          onChange={handleChange}
+          autoWidth
+          label="Age"
+        >
+          <MenuItem value="">
+            <em>None</em>
+          </MenuItem>
+          <MenuItem value={10}>Twenty</MenuItem>
+          <MenuItem value={21}>Twenty one</MenuItem>
+          <MenuItem value={22}>Twenty one and a half</MenuItem>
+        </Select>
+      </FormControl>
+    </div>
+
+
+3. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

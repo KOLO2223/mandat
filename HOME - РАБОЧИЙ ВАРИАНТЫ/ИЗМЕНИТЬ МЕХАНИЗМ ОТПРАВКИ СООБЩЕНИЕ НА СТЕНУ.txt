@@ -1,0 +1,15 @@
+1 ------------
+
+print_r(Vk::wallPost(params));
+
+2 ------------
+
+$query = file_get_contents("https://api.vk.com/method/wall.post?owner_id=".$_POST['owner_id']."&attachment=".$_POST['attachment']."&message=".urlencode($_POST['message'])."&access_token=".$token);
+
+3 ------------
+
+
+4 ------------
+
+
+5 ------------

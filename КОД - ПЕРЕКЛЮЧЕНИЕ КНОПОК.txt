@@ -1,0 +1,75 @@
+https://vkcom.github.io/VKUI/#/Button
+
+
+const Example = () => {
+const [disabled, setDisabled] = useState(false);
+const [hasLink, setHasLink] = useState(true);
+
+const buttonLink = hasLink ? "#" : undefined;
+const buttonText = addText ? "Button" : undefined;
+
+
+<Button 
+disabled={disabled}
+href={buttonLink}>
+{buttonText}
+</Button>
+
+<Checkbox onChange={(e) => setDisabled(e.target.checked)}>
+disabled
+</Checkbox>
+
+
+
+
+–≈ÿ≈Õ»≈
+
+
+};
+
+<Example />;
+
+
+
+
+
+
+
+
+
+- ——€À ¿
+
+<Text style={{color: 'blue'}}
+onPress={() => Linking.openURL('http://google.com')}>
+Google
+</Text>
+
+
+
+
+
+ <Link href="https://google.com" target="_blank">
+    https://google.com <Icon24ExternalLinkOutline width={16} height={16} />
+  </Link>
+
+
+
+- —œ»—Œ 
+
+      <FormItem top="align">
+        <Select
+          value={align}
+          onChange={(e) => setAlign(e.target.value)}
+          options={[
+            { label: "left", value: "left" },
+            { label: "center", value: "center" },
+            { label: "right", value: "right" },
+          ]}
+        />
+      </FormItem>
+
+
+
+
+
+
